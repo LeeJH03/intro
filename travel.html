@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a{text-decoration: none;}
+        img{border: 0;}
+        li{list-style: none;}
+    </style>
+    <!-- 공통 -->
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header{
+            padding: 10px 5px;
+        }
+        #main-header h1{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 27px;
+            color: #222;
+        }
+        #main-header ul{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #main-header li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #main-header li a{
+            color: #555
+        }
+        #main-header li.active a{
+            color: black;
+            font-weight: 500;
+        }
+        #main-header label{
+            text-align: center;
+            float: right;
+            width: 40px;
+            height: 27px;
+            line-height: 27px;
+            color: #222;
+            border:  1px solid #222;
+            border-radius: 5px;
+        }
+        #checkbox{ 
+            background: white;
+            display: none;
+        }
+        #checkbox + nav{
+            background: white;
+            display: block;
+        }
+        #checkbox:checked + nav{
+            background: white;
+            display: none;
+        }
+    </style>
+    <!-- 본문과 푸터 (여기는 서브 페이지 만들 때 내가 디자인을 바꿀 부분)-->
+     
+    <style>
+        #main-content{
+            background: rgb(84, 252, 196);
+            padding: 40px 15px 30px;
+        }
+        #main-content h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #main-content p{
+            color: #222;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #sub-content { 
+            padding-top: 30px; 
+        }
+        #sub-content h1 { 
+            text-align: center; 
+            color: #333; 
+            font: bold;
+        } 
+        #sub-content h2 { 
+            text-align: center; 
+            color: #333; 
+            font-size: 20px; 
+        } 
+        #sub-content p { 
+            text-align: center;
+            color: #555; 
+        }
+        #sub-content img { 
+            width: 250px; 
+            display: block; 
+            margin: auto; 
+        } 
+        #main-footer { 
+            padding-top: 0px; 
+        } 
+        footer { 
+            background: #323232; 
+            color: white; 
+            font-size: 12px; 
+            text-align: center; 
+            line-height: 40px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="main-header">
+        <header class="container">
+            <div>
+                <label for="checkbox">▼</label>
+                <h1">이정휘에 대해서</h1>
+            </div>
+            <input id="checkbox" checked="checked" type="checkbox">
+            <nav>
+                <ul>
+                    <!-- 링크마다 클래스 액티브 바꾸기-->
+                    <li><a href="index.html">내 정보<a></li>
+                    <li><a href="food.html">좋아하는 음식</a></li>
+                    <li><a href="game.html">좋아하는 게임</a></li>
+                    <li class="active"><a href="travel.html">내가 가봤던 여행지</a></li>
+                    <li><a href="anime.html">좋아하는 애니메이션</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="main-content">
+        <article class="container">
+            <h1>내가 가봤던 여행지</h1>
+            <p>어디가 제일 좋았을까요?</p>
+        </article>
+    </div>
+    <div id="sub-content" style="background-color: #ebebeb;">
+        <article class="container">
+            <img src="..\ljh_introduction\image\japan.jpg" alt="" style="border-radius: 40px; box-shadow: 0 6px 12px rgba(0,0,0,0.15)">
+            <h1>🥇 Rank 1. Japan</h1>
+            <h2>도쿄 5회, 오사카 2회, 교토 1회, 후쿠오카 2회</h2>
+            <p style="color: #777777; font-size: 16px; line-height: 1.6;">가장 가까운 나라이면서 가장 친근한 나라로<br>추억을 쌓기 딱 좋은 여행지</p>
+            <br>
+            <br>
+            <img src="..\ljh_introduction\image\bangkok.jpg" alt="태국" style="border-radius: 40px; box-shadow: 0 6px 12px rgba(0,0,0,0.15)">
+            <h1>🥈 Rank 2. Southeast Asia</h1>
+            <h2>필리핀 3회, 태국 2회, 베트남 1회</h2>
+            <p style="color: #777777; font-size: 16px; line-height: 1.6;">단연 최고의 가성비 휴양지<br>휴양이 필요할 땐 여기로 떠납니다</p>
+            <br>
+            <br>
+            <img src="..\ljh_introduction\image\china.jpg" alt="중국" style="border-radius: 40px; box-shadow: 0 6px 12px rgba(0,0,0,0.15)">
+            <h1>🥉 Rank 3. World Wide</h1>
+            <h2>이탈리아, 호주, 중국 각 1회</h2>
+            <p style="color: #777777; font-size: 16px; line-height: 1.6;">세계 각지로 뻗어가는 나의 발걸음<br>더욱 더 많은 곳을 경험하고 싶다!</p>
+            <br>
+            <br>
+            <br>
+            <img src="..\ljh_introduction\image\jeju.jpg" alt="제주" style="border-radius: 40px; box-shadow: 0 6px 12px rgba(0,0,0,0.15)">
+            <h2>🎗️ Bonus. Jeju Island</h2>
+            <p style="color: #777777; font-size: 16px; line-height: 1.6;">1년에 한번은 가족여행으로 꼭 가는 국내 최고의 여행지</p>
+            <br>
+        </article>
+    </div>
+    <div id="main-footer">
+        <footer class="container">
+            <div>©2003-2025 remains. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>

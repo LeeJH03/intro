@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a{text-decoration: none;}
+        img{border: 0;}
+        li{list-style: none;}
+    </style>
+    <!-- 공통 -->
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header{
+            padding: 10px 5px;
+        }
+        #main-header h1{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 27px;
+            color: #222;
+        }
+        #main-header ul{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #main-header li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #main-header li a{
+            color: #555
+        }
+        #main-header li.active a{
+            color: black;
+            font-weight: 500;
+        }
+        #main-header label{
+            text-align: center;
+            float: right;
+            width: 40px;
+            height: 27px;
+            line-height: 27px;
+            color: #222;
+            border:  1px solid #222;
+            border-radius: 5px;
+        }
+        #checkbox{ 
+            background: white;
+            display: none;
+        }
+        #checkbox + nav{
+            background: white;
+            display: block;
+        }
+        #checkbox:checked + nav{
+            background: white;
+            display: none;
+        }
+    </style>
+    <!-- 본문과 푸터 (여기는 서브 페이지 만들 때 내가 디자인을 바꿀 부분)-->
+     
+    <style>
+        #main-content{
+            background: rgb(255, 113, 113);
+            padding: 40px 15px 30px;
+        }
+        #main-content h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #main-content p{
+            color: #222;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #sub-content { 
+            padding-top: 30px; 
+        }
+        #sub-content h1 { 
+            text-align: center; 
+            color: #333; 
+            font: bold;
+        } 
+        #sub-content h2 { 
+            text-align: center; 
+            color: #333; 
+            font-size: 20px; 
+        } 
+        #sub-content p { 
+            text-align: center;
+            color: #555; 
+        }
+        #sub-content img { 
+            width: 300px;
+            display: block; 
+            margin: 10px auto; 
+        } 
+        #main-footer { 
+            padding-top: 0px; 
+        } 
+        footer { 
+            background: #323232; 
+            color: white; 
+            font-size: 12px; 
+            text-align: center; 
+            line-height: 40px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="main-header">
+        <header class="container">
+            <div>
+                <label for="checkbox">▼</label>
+                <h1">이정휘에 대해서</h1>
+            </div>
+            <input id="checkbox" checked="checked" type="checkbox">
+            <nav>
+                <ul>
+                    <!-- 링크마다 클래스 액티브 바꾸기-->
+                    <li><a href="index.html">내 정보<a></li>
+                    <li class="active"><a href="food.html">좋아하는 음식</a></li>
+                    <li><a href="game.html">좋아하는 게임</a></li>
+                    <li><a href="travel.html">내가 가봤던 여행지</a></li>
+                    <li><a href="anime.html">좋아하는 애니메이션</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="main-content">
+        <article class="container">
+            <h1>좋아하는 음식</h1>
+            <p>나의 최애, 차애는?</p>
+        </article>
+    </div>
+    <div id="sub-content" style="background-color: #FDF5E6;">
+        <article class="container">
+            <h1>1위</h1>
+            <h2>"스테이크"</h2>
+            <img src="..\ljh_introduction\image\steak.jpg" alt="스테이크">
+            <p>초등학생 때 부터 변함없는 나의 최애 음식이다.<br>생일때면 항상 가족과 함께 스테이크를 먹으러 간다.</p>
+            <br>
+            <h1>2위</h1>
+            <h2>"치킨"</h2>
+            <img src="..\ljh_introduction\image\chicken.jpg" alt="치킨">
+            <p>치킨은 언제나 옳다.<br>뭘 먹지 고민할 때 1순위로 떠오르는 것이 치킨이다.</p>
+            <br>
+            <h1>3위</h1>
+            <h2>"햄버거"</h2>
+            <img src="..\ljh_introduction\image\hamburger.jpg" alt="햄부기">
+            <p>알려진 것과 다르게 햄버거는 패스트 푸드 중에 꽤나 건강한 축에 속한다.<br>들어가 있는 소고기 패티는 언제 먹어도 질리지 않는다.</p>
+            <br>
+            <h1>이 외의 것들</h1>
+            <p>피자, 삼겹살, 파스타... 등등<br>맛있는 음식은 다 좋아한다.</p>
+            <br>
+            <hr>
+            <br>
+            <h1 style="color: red;">단!!!!</h1>
+            <p><span style="font-size: large; color: red;">해산물</span>을 먹지 못한다. <br>익힌 생선을 제외한 거의 모든 해산물을 비려서 먹지 못한다.</p>
+            <br>    
+        </article>
+    </div>
+    <div id="main-footer">
+        <footer class="container">
+            <div>©2003-2025 remains. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>

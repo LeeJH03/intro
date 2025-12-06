@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a{text-decoration: none;}
+        img{border: 0;}
+        li{list-style: none;}
+    </style>
+    <!-- 공통 -->
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header{
+            padding: 10px 5px;
+        }
+        #main-header h1{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 27px;
+            color: #222;
+        }
+        #main-header ul{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #main-header li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #main-header li a{
+            color: #555
+        }
+        #main-header li.active a{
+            color: black;
+            font-weight: 500;
+        }
+        #main-header label{
+            text-align: center;
+            float: right;
+            width: 40px;
+            height: 27px;
+            line-height: 27px;
+            color: #222;
+            border:  1px solid #222;
+            border-radius: 5px;
+        }
+        #checkbox{ 
+            background: white;
+            display: none;
+        }
+        #checkbox + nav{
+            background: white;
+            display: block;
+        }
+        #checkbox:checked + nav{
+            background: white;
+            display: none;
+        }
+    </style>
+    <!-- 본문과 푸터 (여기는 서브 페이지 만들 때 내가 디자인을 바꿀 부분)-->
+     
+    <style>
+        #main-content{
+            background: #ffd3e2;
+            padding: 40px 15px 30px;
+        }
+        #main-content h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #main-content p{
+            color: #222;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #sub-content { 
+            padding-top: 30px; 
+            text-align: center;
+        }
+
+        [data-role="slider"] { 
+            margin: 0 auto; 
+            display: inline-block;
+        }
+        #sub-content h1 { 
+            text-align: center; 
+            color: black; 
+            font: bold;
+        } 
+        #sub-content h2 { 
+            text-align: center; 
+            color: black; 
+            font-size: 23px; 
+        } 
+        #sub-content p { 
+            text-align: center;
+            color: black; 
+        }
+        #sub-content img { 
+            width: 200px; 
+            display: block; 
+            margin: 10px auto; 
+        } 
+        #main-footer { 
+            padding-top: 0px; 
+        } 
+        footer { 
+            background: #323232; 
+            color: white; 
+            font-size: 12px; 
+            text-align: center; 
+            line-height: 40px; 
+        }
+        /* 슬라이더 안에 있는 이미지만 콕 집어서 꽉 채우기 */
+        #sub-content [data-role="slider"] .item{
+            padding: 25px; 
+            box-sizing: border-box;
+        }
+        #sub-content [data-role="slider"] .item img {
+            width: 100%;       /* 가로 꽉 채우기 */
+            height: 640px;      /* 세로 꽉 채우기 */
+            object-fit: cover; /* 이미지 비율 유지하며 빈틈없이 채우기 */
+            margin: 0;         /* 기존의 여백 제거 */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3)
+        }
+        .caption {
+            width: 100%;
+            height: 100px;       /* 👈 늘어난 공간(460-360)만큼 사용 */
+            padding: 15px;
+            box-sizing: border-box; /* 레이아웃 깨짐 방지 */
+            background-color: white; /* 배경색 */
+            text-align: center;   /* 왼쪽 정렬 */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3)
+            
+}
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        //갤러리 스타일 적용
+        $(document).ready(function(){
+            var width=$('[data-role="slider"]').attr('data-width');
+            var height=$('[data-role="slider"]').attr('data-height');
+            var count=$('[data-role="slider"] div.item').length;
+
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height,
+                
+            }).find('.container').css({
+                position: 'absolute',
+                width: width*count,
+                overflow: 'hidden',
+                left: 0,
+                padding: 0,
+                margin: 0,
+                
+            }).find(".item").css({
+                width: width,
+                height: height,
+                float: 'left',
+            });
+
+            var currentPage = 0;
+            var changePage = function(){
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+            }, 500);
+        }
+        $('#left-button').click(function(){
+            if(currentPage>0){
+                currentPage=currentPage-1;
+                changePage();
+            }
+        });
+        $('#right-button').click(function(){
+            if(currentPage<count-1){
+                currentPage=currentPage+1;
+                changePage();
+            }
+        });
+    });
+    
+    </script>
+</head>
+<body>
+    <div id="main-header">
+        <header class="container">
+            <div>
+                <label for="checkbox">▼</label>
+                <h1">이정휘에 대해서</h1>
+            </div>
+            <input id="checkbox" checked="checked" type="checkbox">
+            <nav>
+                <ul>
+                    <!-- 링크마다 클래스 액티브 바꾸기-->
+                    <li><a href="index.html">내 정보<a></li>
+                    <li><a href="food.html">좋아하는 음식</a></li>
+                    <li><a href="game.html">좋아하는 게임</a></li>
+                    <li><a href="travel.html">내가 가봤던 여행지</a></li>
+                    <li class="active"><a href="anime.html">좋아하는 애니메이션</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="main-content">
+        <article class="container">
+            <h1>좋아하는 애니메이션</h1>
+            <p>나의 인생이라고 할 수 있는 작품들</p>
+        </article>
+    </div>
+    <div id="sub-content" style="background-color: #FAFAFA;">
+        <div data-role="slider" data-width="480" data-height="780">
+        <div class="container">
+            <div class="item">
+                <img src="..\ljh_introduction\image\frieren.jpg" alt="장송의 프리렌">
+                <div class="caption">
+                    <h2>장송의 프리렌</h2>
+                    <p>군생활을 버티게 해준 신작이자 나의 최애 애니메이션</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="..\ljh_introduction\image\orderrabbit.png" alt="주문은 토끼입니까?">
+                <div class="caption">
+                    <h2>주문은 토끼입니까?</h2>
+                    <p>'장송의 프리렌'이 나오기 전까지 <br>
+                        수년동안 나의 최애였던 애니메이션</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="..\ljh_introduction\image\lycoreco.png" alt="리코리스 리코일">
+                <div class="caption">
+                    <h2>리코리스 리코일</h2>
+                    <p>나의 추천작에 꼭 들어가는 애니메이션</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="..\ljh_introduction\image\yourname.png" alt="너의 이름은.">
+                <div class="caption">
+                    <h2>너의 이름은.</h2>
+                    <p>나의 애니메이션 입덕작</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    <button id="left-button">◀</button>
+    <button id="right-button">▶</button>
+    </div>
+    <div id="main-footer">
+        <footer class="container">
+            <div>©2003-2025 remains. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>

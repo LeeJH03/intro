@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a{text-decoration: none;}
+        img{border: 0;}
+        li{list-style: none;}
+    </style>
+    <!-- 공통 -->
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header{
+            padding: 10px 5px;
+        }
+        #main-header h1{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 27px;
+            color: #222;
+        }
+        #main-header ul{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #main-header li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #main-header li a{
+            color: #555
+        }
+        #main-header li.active a{
+            color: black;
+            font-weight: 500;
+        }
+        #main-header label{
+            text-align: center;
+            float: right;
+            width: 40px;
+            height: 27px;
+            line-height: 27px;
+            color: #222;
+            border:  1px solid #222;
+            border-radius: 5px;
+        }
+        #checkbox{ 
+            background: white;
+            display: none;
+        }
+        #checkbox + nav{
+            background: white;
+            display: block;
+        }
+        #checkbox:checked + nav{
+            background: white;
+            display: none;
+        }
+    </style>
+    <!-- 본문과 푸터 (여기는 서브 페이지 만들 때 내가 디자인을 바꿀 부분)-->
+     
+    <style>
+        #main-content{
+            background: rgb(117, 117, 117);
+            padding: 40px 15px 30px;
+        }
+        #main-content h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #main-content p{
+            color: #222;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #sub-content { 
+            padding-top: 30px; 
+            background: #121212;
+        }
+        #sub-content h1 { 
+            text-align: center; 
+            color: white; 
+            font: bold;
+        } 
+        #sub-content h2 { 
+            text-align: center; 
+            color: white; 
+            font-size: 20px; 
+        } 
+        #sub-content p { 
+            text-align: center;
+            color: #aaa; 
+        }
+        #sub-content img { 
+            width: 450px; 
+            display: block; 
+            margin: 10px auto 10px 0;
+            border-radius: 10px;
+        } 
+        #main-footer { 
+            padding-top: 0px; 
+        } 
+        footer { 
+            background: #323232; 
+            color: white; 
+            font-size: 12px; 
+            text-align: center; 
+            line-height: 40px; 
+        }
+        span{
+            display: inline-block;
+            margin: auto;
+            width: auto;
+            height: auto;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-header">
+        <header class="container">
+            <div>
+                <label for="checkbox">▼</label>
+                <h1">이정휘에 대해서</h1>
+            </div>
+            <input id="checkbox" checked="checked" type="checkbox">
+            <nav>
+                <ul>
+                    <!-- 링크마다 클래스 액티브 바꾸기-->
+                    <li><a href="index.html">내 정보<a></li>
+                    <li><a href="food.html">좋아하는 음식</a></li>
+                    <li class="active"><a href="game.html">좋아하는 게임</a></li>
+                    <li><a href="travel.html">내가 가봤던 여행지</a></li>
+                    <li><a href="anime.html">좋아하는 애니메이션</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="main-content">
+        <article class="container">
+            <h1>좋아하는 게임</h1>
+            <p>게임 개발자 지망생의 취향을 알아보자</p>
+        </article>
+    </div>
+    <div id="sub-content">
+        <article class="container">
+            <h2>내가 좋아하는 게임 장르</h2>
+            <p>RPG, 오픈월드, 어드벤처, 액션 등등 다양한 장르의 게임을 좋아한다.<br>특히 친구들과 같이 할 수 있는 게임을 선호한다.</p>
+            <div style="background: linear-gradient(to bottom, #121212, #2A2A2A); height: 50px;"></div>
+            
+            <p style="background-color: #2A2A2A; display: flex; align-items: flex-start; gap: 10px; padding: 20px;">
+                <span style="font-size: xx-large;">
+                    가장 많이 플레이 한 게임: 
+                    <span style="font-style: italic; color: #ff6b6b; font-weight: bold;">리그 오브 레전드(LOL)</span>
+                </span>
+                <span style="color: #ddd;">[친구들과 같이할 때 가장 재미있는 게임!]</span>
+                <span><img src="..\ljh_introduction\image\lol.png" alt="리그오브레전드"></span>
+            </p>
+
+            <div style="background: linear-gradient(to bottom, #2A2A2A, #2A2A2A); height: 50px;"></div>
+            
+            <p style="background-color: #2A2A2A; display: flex; align-items: flex-start; gap: 10px; padding: 20px;">
+                <span style="font-size: xx-large;">
+                    가장 애정이 가는 게임: 
+                    <span style="font-style: italic; color: #48D1CC; font-weight: bold;">원신(Genshin Impact)</span>   
+                </span>
+                <span style="color: #ddd;">[캐릭터들이 너무 예쁘고 스토리가 아름다운 게임]</span>
+                <span><img src="..\ljh_introduction\image\genshin.png" alt="원신"></span>
+            </p>
+
+            <div style="background: linear-gradient(to bottom, #2A2A2A, #2A2A2A); height: 50px;"></div>
+            
+            <p style="background-color: #2A2A2A; display: flex; align-items: flex-start; gap: 10px; padding: 20px;">
+                <span style="font-size: xx-large;">
+                    가장 자신 있는 게임: 
+                    <span style="font-style: italic; color: #FFD700; font-weight: bold;">오버워치(Overwatch)</span>     
+                </span>
+                <span style="color: #ddd;">[친구들과 같이할 때 가장 재미있는 게임 2!]</span>
+                <span><img src="..\ljh_introduction\image\overwatch.png" alt="오버워치"></span>
+            </p>
+
+            <div style="background: linear-gradient(to bottom, #2A2A2A, #121212); height: 50px;"></div>
+            <br>
+        </article>
+    </div>
+    <div id="main-footer">
+        <footer class="container">
+            <div>©2003-2025 remains. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
