@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개 페이지</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a{text-decoration: none;}
+        img{border: 0;}
+        li{list-style: none;}
+    </style>
+    <!-- 공통 -->
+    <style>
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header{
+            padding: 10px 5px;
+        }
+        #main-header h1{
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 27px;
+            color: #222;
+        }
+        #main-header ul{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #main-header li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #main-header li a{
+            color: #555
+        }
+        #main-header li.active a{
+            color: black;
+            font-weight: 500;
+        }
+        #main-header label{
+            text-align: center;
+            float: right;
+            width: 40px;
+            height: 27px;
+            line-height: 27px;
+            color: #222;
+            border:  1px solid #222;
+            border-radius: 5px;
+        }
+        #checkbox{ 
+            background: white;
+            display: none;
+        }
+        #checkbox + nav{
+            background: white;
+            display: block;
+        }
+        #checkbox:checked + nav{
+            background: white;
+            display: none;
+        }
+    </style>
+    <!-- 본문과 푸터 (여기는 서브 페이지 만들 때 내가 디자인을 바꿀 부분)-->
+     
+    <style>
+        #main-content{
+            background: #9370DB;
+            padding: 40px 15px 30px;
+        }
+        #main-content h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 500;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #main-content p{
+            color: #222;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #sub-content { 
+            padding-top: 30px; 
+        }
+        #sub-content h1 { 
+            color: #333; 
+            font: bold;
+        } 
+        #sub-content h2 { 
+            color: #333; 
+            font-size: 17px; 
+        } 
+        #sub-content p { 
+            color: #555; 
+        }
+        #sub-content img { 
+            width: 280px; 
+            display: block; 
+            margin: 0 100px 10px 30%; 
+        } 
+        #main-footer { 
+            padding-top: 0px; 
+        } 
+        footer { 
+            background: #323232; 
+            color: white; 
+            font-size: 12px; 
+            text-align: center; 
+            line-height: 40px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="main-header">
+        <header class="container">
+            <div>
+                <label for="checkbox">▼</label>
+                <h1>이정휘에 대해서</h1>
+            </div>
+            <input id="checkbox" checked="checked" type="checkbox">
+            <nav>
+                <ul>
+                    <!-- 링크마다 클래스 액티브 바꾸기-->
+                    <li class="active"><a href="index.html">내 정보<a></li>
+                    <li><a href="food.html">좋아하는 음식</a></li>
+                    <li><a href="game.html">좋아하는 게임</a></li>
+                    <li><a href="travel.html">내가 가봤던 여행지</a></li>
+                    <li><a href="anime.html">좋아하는 애니메이션</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="main-content">
+        <article class="container">
+            <h1>이정휘의 정보</h1>
+            <p>계열: AI/SW / 학년: 1학년 / 학번: 202378057 </p>
+        </article>
+    </div>
+    <div id="sub-content" style="background-color: beige;">
+        <article class="container">
+            <img src="..\ljh_introduction\image\me.jpg" alt="내 사진" style="float: left;">
+            <h1>About me</h1>
+            <h2>나에 대해서</h2>
+            <br>
+            <p>이름: 이정휘</p>
+            <p>생년월일: 2003년08월03일</p>
+            <p>연락처: leejh030803@hs.ac.kr</p>
+            <p>MBTI: ISTJ</p>
+            <br>
+            <h1>Achievements</h1>
+            <h2>업적</h2>
+            <br>
+            <p style="font-size: larger; color: goldenrod;">2025년 2학기 '전액장학금'</p>
+            <p>병역 '필'</p>
+            <p>오버워치 경쟁전 티어 '다이아'</p>
+            <br>
+            </article>
+    </div>
+    <div id="main-footer">
+        <footer class="container">
+            <div>©2003-2025 remains. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
